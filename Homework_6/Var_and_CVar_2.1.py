@@ -11,6 +11,17 @@ WEEKS_PER_YEAR = 52
 returns = pd.read_excel(DATA_PATH, sheet_name="spx returns")
 returns = returns.set_index("date")[TICKERS]
 
+# Rolling forecasted volatility for each stock
+rolling_vol_stocks = (
+    returns
+    .rolling(WINDOW)
+    .std()
+    .shift(1)
+)
+
+print("End-of-sample rolling volatility for each stock:")
+print(rolling_vol_stocks.iloc[-1].round(4))
+
 weights = pd.Series(1 / len(TICKERS), index=TICKERS)
 port_ret = returns @ weights
 port_ret.name = "EW_Portfolio"

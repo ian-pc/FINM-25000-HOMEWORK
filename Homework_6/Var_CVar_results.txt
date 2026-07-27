@@ -24,7 +24,7 @@ CVaR (.05)    0.082605
 Simple average of the 4 individual volatilities: 0.0585
 Equally-weighted portfolio volatility: 0.0424
 
-The equally-weighted portfolio's volatility, VaR, and CVaR are all lower than the simple average of the four individual statistics, and lower than three of the four individual stocks (NVDA, AMD, CMG) on every measure. Only SBUX, has a slightly lower volatility than the portfolio. This is because of diversification as all the stocks are not perfectly correlated, combining them into one portfolio averages and cancels out risk. 
+The equally-weighted portfolio's volatility, VaR, and CVaR are all lower than the simple average of the four individual statistics, and lower than three of the four individual stocks (NVDA, AMD, CMG) on every measure. Only SBUX, has a slightly lower volatility than the portfolio. This is because of diversification as all the stocks are not perfectly correlated, Because the stocks are not perfectly correlated, some of their individual risk is diversified away when they are combined in the portfolio.
 
 1.3
 Most volatile asset: AMD (vol = 0.0810)
@@ -36,6 +36,12 @@ CVaR (.05)           0.0826                     0.0574
 Removing AMD from the equally-weighted portfolio lowers the portfolio's volatility, VaR, and CVaR. However, the amount of risk removed is smaller than what AMD's statistics would suggest. Given AMD's risk according to its volatility and its representation of 25% in the portfolio, a naive linear scaling would predict a much bigger drop than what we actually observed. The reason the realized risk reduction is smaller than that naive estimate is that AMD's risk was already being partially diversified away by its imperfect correlation with the other three names so its marginal contribution to the portfolio risk is less than its stand-alone risk would imply. This reinforces the results from 1.2 that correlation, not just volatility, determines how much any single asset actually adds to portfolio-level VaR and CVaR.
 
 2.1
+End-of-sample rolling volatility for each stock:
+NVDA    0.0433
+AMD     0.1003
+CMG     0.0493
+SBUX    0.0470
+Name: 2026-07-03 00:00:00, dtype: float64
 Rolling (m=26) forecasted volatility as of end of sample: 0.0404 (weekly)
 Volatility (weekly):      0.0404
 Volatility (annualized):  0.2917
