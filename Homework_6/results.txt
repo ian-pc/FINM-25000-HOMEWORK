@@ -34,3 +34,21 @@ VaR (.05)            0.0587                     0.0419
 CVaR (.05)           0.0826                     0.0574
 
 Removing AMD from the equally-weighted portfolio lowers the portfolio's volatility, VaR, and CVaR. However, the amount of risk removed is smaller than what AMD's statistics would suggest. Given AMD's risk according to its volatility and its representation of 25% in the portfolio, a naive linear scaling would predict a much bigger drop than what we actually observed. The reason the realized risk reduction is smaller than that naive estimate is that AMD's risk was already being partially diversified away by its imperfect correlation with the other three names so its marginal contribution to the portfolio risk is less than its stand-alone risk would imply. This reinforces the results from 1.2 that correlation, not just volatility, determines how much any single asset actually adds to portfolio-level VaR and CVaR.
+
+2.1
+Rolling (m=26) forecasted volatility as of end of sample: 0.0404 (weekly)
+Volatility (weekly):      0.0404
+Volatility (annualized):  0.2917
+Normal VaR (.05):         0.0667
+Normal CVaR (.05):        0.0827
+
+Comparison table:
+                     1.2 Unconditional (full-sample, empirical)  2.1 Conditional (rolling m=26, Normal)
+Volatility (weekly)                                      0.0424                                  0.0404
+VaR (.05)                                                0.0587                                  0.0667
+CVaR (.05)                                               0.0826                                  0.0827
+
+Compared to the unconditional, statistics from 1.2 the conditional end-of-sample volatility  is very close to, and in fact slightly below, the unconditional volatility has not been dramatically calmer or more turbulent than the sample average. Despite the slightly lower volatility input, the conditional Normal VaR comes out HIGHER than the empirical VaR from 1.2. This shows that the Normal approximation and the empirical (direct quantile) approach need not agree even when their
+volatility inputs are similar: the Normal method forces the tail quantile to sit at exactly z_.05 * sigma, while the true empirical 5th-percentile return for this portfolio happens to be a bit less extreme than the Normal distribution would predict for a return series with this volatility (i.e. the realized return distribution is not perfectly Normal at the 5% cutoff). CVaR turns out nearly identical across the two approaches, which is a coincidence of this particular sample rather than a general result. The Normal approximation and the empirical/historical approach can disagree about how extreme the tail is, even when overall volatility estimates are
+close, and only the empirical approach directly reflects the actual shape (skewness, kurtosis) of realized returns rather than assuming Normality.
+
