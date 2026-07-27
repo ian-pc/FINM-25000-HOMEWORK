@@ -52,3 +52,15 @@ Compared to the unconditional, statistics from 1.2 the conditional end-of-sample
 volatility inputs are similar: the Normal method forces the tail quantile to sit at exactly z_.05 * sigma, while the true empirical 5th-percentile return for this portfolio happens to be a bit less extreme than the Normal distribution would predict for a return series with this volatility (i.e. the realized return distribution is not perfectly Normal at the 5% cutoff). CVaR turns out nearly identical across the two approaches, which is a coincidence of this particular sample rather than a general result. The Normal approximation and the empirical/historical approach can disagree about how extreme the tail is, even when overall volatility estimates are
 close, and only the empirical approach directly reflects the actual shape (skewness, kurtosis) of realized returns rather than assuming Normality.
 
+2.2
+VaR Hit Test Results:
+                      Observations  Hits  Hit Percentage
+Expanding volatility           549    20        0.036430
+Rolling volatility             549    24        0.043716
+
+Hit percentages:
+Expanding volatility: 3.64%
+Rolling volatility: 4.37%
+Expected hit percentage: 5.00%
+
+The expanding-volatility model has a hit rate of 3.64%, while the rolling-volatility model has a hit rate of 4.37%. Both are below the expected 5% rate, meaning that both VaR estimates were slightly conservative. The rolling model is closer to 5%, suggesting that it responds better to changes in recent market volatility.
