@@ -18,3 +18,10 @@ CMG     0.109571
 SBUX    0.087966
 
 1.2
+Volatility    0.042355
+VaR (.05)     0.058724
+CVaR (.05)    0.082605
+Simple average of the 4 individual volatilities: 0.0585
+Equally-weighted portfolio volatility: 0.0424
+
+The equally-weighted portfolio's volatility, VaR, and CVaR are all lower than the simple average of the four individual statistics, and lower than three of the four individual stocks (NVDA, AMD, CMG) on every measure. Only SBUX, has a slightly lower volatility than the portfolio. This is because of diversification as all the stocks are not perfectly correlated, combining them into one portfolio averages and cancels out risk. 
