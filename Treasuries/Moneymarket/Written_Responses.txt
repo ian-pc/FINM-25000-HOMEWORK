@@ -1,0 +1,16 @@
+3. Questions:
+Comment on what this regression tells us about the nature of interest rates.
+That is, can we forecast the next period’s rate?
+Does the series have autocorrelation?
+
+Answer:
+SOFR is highly persistent and has positive autocorrelation. 
+A high R-squared and beta close to 1 indicate that the previous period's rate helps forecast the next period's rate, although the forecast is not perfect.
+
+4. Questions:
+Are SPY returns autocorrelated? And SPY prices?
+
+Answer:
+SPY Returns vs. Prices:
+SPY daily returns generally have little autocorrelation. A beta and R-squared close to zero indicate that yesterday's return provides little information about today's return. 
+SPY prices, however, are highly autocorrelated, with beta close to 1 and a high R-squared. Prices are persistent, but daily returns are much harder to predict.
